@@ -294,7 +294,7 @@ class ModelChoiceField(forms.ChoiceField):
     def to_python(self, value):
         if isinstance(value, ModelBase):
             return value
-        app_label, model_name = value.lower().split('.')
+        app_label, model_name = value.split('.')
         return apps.get_model(app_label, model_name)
 
     def prepare_value(self, value):

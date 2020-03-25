@@ -169,10 +169,11 @@
     select_all: function() {
         var box = this.to_box[0];
         for (var i = 0; i < box.options.length; i++) {
-            box.options[i].selected = 'selected';
+            box.options[i].selected = true;
         }
     },
     refresh_icons: function() {
+        select_all();
         var is_from_selected = this.from_box.find('option:selected').length > 0;
         var is_to_selected = this.to_box.find('option:selected').length > 0;
         // Active if at least one item is selected
