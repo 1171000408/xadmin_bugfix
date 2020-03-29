@@ -70,6 +70,9 @@
           if (node.displayed) {
               select.options[select.options.length] = new Option(node.text, node.value, false, false);
           }
+		  if (box == this.to_box) {
+              this.to_box[0].options[0].selected = true;
+          }
       }
     },
     filter: function(text) {
@@ -173,7 +176,6 @@
         }
     },
     refresh_icons: function() {
-        select_all();
         var is_from_selected = this.from_box.find('option:selected').length > 0;
         var is_to_selected = this.to_box.find('option:selected').length > 0;
         // Active if at least one item is selected
